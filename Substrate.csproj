@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AFE30E14-3F2F-4461-9F7D-147AB4DCA4C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Substrate</RootNamespace>
+    <AssemblyName>Substrate</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\NET2\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\NET2\Substrate.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\NET2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\NET2\Substrate.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SubstrateCS\Source\AlphaWorld.cs" />
+    <Compile Include="SubstrateCS\Source\AnvilBiomeCollection.cs" />
+    <Compile Include="SubstrateCS\Source\AnvilChunk.cs" />
+    <Compile Include="SubstrateCS\Source\AnvilRegion.cs" />
+    <Compile Include="SubstrateCS\Source\AnvilRegionManager.cs" />
+    <Compile Include="SubstrateCS\Source\AnvilSection.cs" />
+    <Compile Include="SubstrateCS\Source\AnvilWorld.cs" />
+    <Compile Include="SubstrateCS\Source\BetaRegionManager.cs" />
+    <Compile Include="SubstrateCS\Source\Core\CompositeDataArray.cs" />
+    <Compile Include="SubstrateCS\Source\Core\FusedDataArray.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaNodeShortArray.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeShortArray.cs" />
+    <Compile Include="SubstrateCS\Source\RegionChunkManager.cs" />
+    <Compile Include="SubstrateCS\Source\BetaRegion.cs" />
+    <Compile Include="SubstrateCS\Source\BetaWorld.cs" />
+    <Compile Include="SubstrateCS\Source\BiomeInfo.cs" />
+    <Compile Include="SubstrateCS\Source\Core\BlockTileTicks.cs" />
+    <Compile Include="SubstrateCS\Source\Core\BoundedBlockInterface.cs" />
+    <Compile Include="SubstrateCS\Source\Core\ItemInterface.cs" />
+    <Compile Include="SubstrateCS\Source\Data\BetaDataManager.cs" />
+    <Compile Include="SubstrateCS\Source\Data\DataExceptions.cs" />
+    <Compile Include="SubstrateCS\Source\Data\MapFile.cs" />
+    <Compile Include="SubstrateCS\Source\Core\OpenWorldEvent.cs" />
+    <Compile Include="SubstrateCS\Source\Core\RegionInterface.cs" />
+    <Compile Include="SubstrateCS\Source\Core\UnboundedBlockInterface.cs" />
+    <Compile Include="SubstrateCS\Source\Data\DataManager.cs" />
+    <Compile Include="SubstrateCS\Source\Data\Map.cs" />
+    <Compile Include="SubstrateCS\Source\Data\MapConverter.cs" />
+    <Compile Include="SubstrateCS\Source\Data\MapManager.cs" />
+    <Compile Include="SubstrateCS\Source\Data\MapManagerInterface.cs" />
+    <Compile Include="SubstrateCS\Source\Enchantment.cs" />
+    <Compile Include="SubstrateCS\Source\EnchantmentInfo.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityAnimal.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityBlaze.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityCaveSpider.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityEnderDragon.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityEnderEye.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityEnderman.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityEnderPearl.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityFireball.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityMagmaCube.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityMooshroom.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySilverfish.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySmallFireball.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySnowman.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityVillager.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityXPOrb.cs" />
+    <Compile Include="SubstrateCS\Source\ImportExport\Schematic.cs" />
+    <Compile Include="SubstrateCS\Source\ItemCollection.cs" />
+    <Compile Include="SubstrateCS\Source\LevelIOException.cs" />
+    <Compile Include="SubstrateCS\Source\AlphaBlock.cs" />
+    <Compile Include="SubstrateCS\Source\AlphaBlockRef.cs" />
+    <Compile Include="SubstrateCS\Source\CacheTable.cs" />
+    <Compile Include="SubstrateCS\Source\Core\BlockFluid.cs" />
+    <Compile Include="SubstrateCS\Source\Core\PlayerManagerInterface.cs" />
+    <Compile Include="SubstrateCS\Source\Data.cs" />
+    <Compile Include="SubstrateCS\Source\ItemInfo.cs" />
+    <Compile Include="SubstrateCS\Source\Core\ChunkCache.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySquid.cs" />
+    <Compile Include="SubstrateCS\Source\EntityCollection.cs" />
+    <Compile Include="SubstrateCS\Source\AlphaBlockCollection.cs" />
+    <Compile Include="SubstrateCS\Source\Core\BlockLight.cs" />
+    <Compile Include="SubstrateCS\Source\Core\BlockTileEntities.cs" />
+    <Compile Include="SubstrateCS\Source\Level.cs" />
+    <Compile Include="SubstrateCS\Source\NbtWorld.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\INbtObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubstrateCS\Source\Nbt\NbtIOException.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\NbtTree.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\NbtVerifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaNode.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaNodeArray.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaNodeCompound.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaNodeIntArray.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaNodeList.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaNodeScaler.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaNodeString.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\SchemaOptions.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNode.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeByteArray.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeCompound.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeDouble.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeFloat.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeInt.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeIntArray.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeList.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeLong.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeShort.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeString.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagType.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeByte.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\TagNodeNull.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\VerifierLogger.cs" />
+    <Compile Include="SubstrateCS\Source\Orientation.cs" />
+    <Compile Include="SubstrateCS\Source\PlayerIOException.cs" />
+    <Compile Include="SubstrateCS\Source\PlayerManager.cs" />
+    <Compile Include="SubstrateCS\Source\Core\PlayerFile.cs" />
+    <Compile Include="SubstrateCS\Properties\AssemblyInfo.cs" />
+    <Compile Include="SubstrateCS\Source\BlockInfo.cs" />
+    <Compile Include="SubstrateCS\Source\Core\BlockInterface.cs" />
+    <Compile Include="SubstrateCS\Source\Core\BlockKey.cs" />
+    <Compile Include="SubstrateCS\Source\BlockManager.cs" />
+    <Compile Include="SubstrateCS\Source\AlphaChunk.cs" />
+    <Compile Include="SubstrateCS\Source\Core\ChunkFile.cs" />
+    <Compile Include="SubstrateCS\Source\AlphaChunkManager.cs" />
+    <Compile Include="SubstrateCS\Source\Core\ChunkInterface.cs" />
+    <Compile Include="SubstrateCS\Source\Core\ChunkKey.cs" />
+    <Compile Include="SubstrateCS\Source\ChunkRef.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityArrow.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityBoat.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityChicken.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityCow.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityCreeper.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityEgg.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityFallingSand.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityGhast.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityGiant.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityItem.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityMinecart.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityMinecartChest.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityMinecartFurnace.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityMob.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityMonster.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityPainting.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityPig.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityPigZombie.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityPrimedTnt.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySheep.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySkeleton.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySlime.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySnowball.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntitySpider.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityThrowable.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityWolf.cs" />
+    <Compile Include="SubstrateCS\Source\Entities\EntityZombie.cs" />
+    <Compile Include="SubstrateCS\Source\Entity.cs" />
+    <Compile Include="SubstrateCS\Source\EntityFactory.cs" />
+    <Compile Include="SubstrateCS\Source\Item.cs" />
+    <Compile Include="SubstrateCS\Source\Core\NBTFile.cs" />
+    <Compile Include="SubstrateCS\Source\Nbt\JSONSerializer.cs" />
+    <Compile Include="SubstrateCS\Source\Player.cs" />
+    <Compile Include="SubstrateCS\Source\Core\Region.cs" />
+    <Compile Include="SubstrateCS\Source\Core\RegionFile.cs" />
+    <Compile Include="SubstrateCS\Source\Core\RegionKey.cs" />
+    <Compile Include="SubstrateCS\Source\Core\RegionManager.cs" />
+    <Compile Include="SubstrateCS\Source\SpawnPoint.cs" />
+    <Compile Include="SubstrateCS\Source\SubstrateException.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityBeacon.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityBrewingStand.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityChest.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityControl.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityEnchantmentTable.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityEndPortal.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityFurnace.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityMobSpawner.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityPiston.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityMusic.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityRecordPlayer.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntitySign.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntities\TileEntityTrap.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntity.cs" />
+    <Compile Include="SubstrateCS\Source\TileEntityFactory.cs" />
+    <Compile Include="SubstrateCS\Source\Core\Base.cs" />
+    <Compile Include="SubstrateCS\Source\Core\ByteArray.cs" />
+    <Compile Include="SubstrateCS\Source\Core\IndexedLinkedList.cs" />
+    <Compile Include="SubstrateCS\Source\Core\Interface.cs" />
+    <Compile Include="SubstrateCS\Source\Core\LRUCache.cs" />
+    <Compile Include="SubstrateCS\Source\Core\NibbleArray.cs" />
+    <Compile Include="SubstrateCS\Source\TileTick.cs" />
+    <Compile Include="SubstrateCS\Source\Vector.cs" />
+    <Compile Include="SubstrateCS\Source\World.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\Crc32.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\Deflate.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\DeflateStream.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\GZipStream.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\Inflate.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\InfTree.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\ParallelDeflateOutputStream.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\Tree.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\Zlib.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\ZlibBaseStream.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\ZlibCodec.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\ZlibConstants.cs" />
+    <Compile Include="SubstrateCS\Vendor\DotNetZip\Zlib\ZlibStream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SubstrateCS\Source\Experimental\" />
+    <Folder Include="SubstrateCS\Source\Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SubstrateCS\Vendor\DotNetZip\Zlib\LICENSE.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
