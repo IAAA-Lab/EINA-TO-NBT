@@ -59,22 +59,61 @@ namespace EINA_TO_NBT
             ChunkRef chunk;
 
 
+            words = lines[0].Split(' ');
+            int minx = Int32.Parse(words[0]);
+            int maxx = Int32.Parse(words[0]);
+            int miny = Int32.Parse(words[0]);
+            int maxy = Int32.Parse(words[0]);
+
             for (int i = 0; i < lines.Length; i++) {
 
                 words = lines[i].Split(' ');
+                //System.Console.WriteLine(lines[i]);
                 int x = Int32.Parse(words[0]);
                 int y = Int32.Parse(words[1]);
                 int z = Int32.Parse(words[2]);
                 int color = Int32.Parse(words[3]);
+
+                string text = "";
+
+
+                
+
+
+                if (words.Length > 4) {
+
+                    text = words[4];
+                    for (int j = 5; j < words.Length; j++){
+                        text += ' ' + words[j];
+                    }
+                }else{
+                    text = "";
+                }
+
+
                 int xLocal = x/16;
                 int yLocal = y/16;
         
+                if (xLocal < minx){
+                    minx = xLocal;
+                }
+                if (xLocal > maxx){
+                    maxx = xLocal;
+                }
+                if (yLocal < miny){
+                    miny = yLocal;
+                }
+                if (yLocal > maxy){
+                    maxy = yLocal;
+                }
 
                 if(!cm.ChunkExists(xLocal,yLocal)){
                     //System.Console.WriteLine(xLocal+"  "+yLocal);
                     cm.CreateChunk(xLocal,yLocal);
                 }
                 chunk = cm.GetChunkRef(xLocal,yLocal);
+                //System.Console.WriteLine(x+"  "+y+"   "+z);
+                //System.Console.WriteLine(xLocal+"  "+yLocal);
 
                 if(!chunk.IsDirty){
 
@@ -85,21 +124,30 @@ namespace EINA_TO_NBT
                     chunk.Blocks.RebuildBlockLight();
                     chunk.Blocks.RebuildSkyLight();
                     //System.Console.WriteLine(chunk.IsDirty);
-                    setBlock(chunk,x%16, z + 64, y%16,color);
+
+                    for (int i2 = 0; i2 < 16; i2++) {
+                        for (int j = 0; j < 16; j++) {
+                            setBlock(chunk,i2, 64, j, 16,"");
+                        }
+                    }
+                    if (((xLocal%8) == 0) & ((yLocal%8) == 0)){
+                        cm.Save();
+                    }
+
+                    setBlock(chunk,x%16, z + 64, y%16,color, text);
                 }else{
-                    //chunk = cm.GetChunkRef(xLocal,yLocal);
-                    //System.Console.WriteLine(x%16+"  "+y%16+"  "+(z+64));
-                    setBlock(chunk,x%16, z + 64, y%16,color);
+                    setBlock(chunk,x%16, z + 64, y%16,color, text);
+                    //System.Console.WriteLine("hola");
 
                 }
-            }
-            chunk = cm.GetChunkRef(0,0);
-
-            for (int x = 0; x < 16; x++) {
-                for (int z = 0; z < 16; z++) {
-                    setBlock(chunk,x, 100, z, 16);
+                if((i+1)%500000 == 0){
+                    System.Console.WriteLine("Guardando");
+                    world.Save();
+                    //System.Console.WriteLine("Hecho");
                 }
             }
+            
+
 
 
             world.Save();
@@ -109,7 +157,7 @@ namespace EINA_TO_NBT
 
 
 
-        static void setBlock(ChunkRef chunk, int x, int y, int z, int color){
+        static void setBlock(ChunkRef chunk, int x, int y, int z, int color, string text){
             if(color<16){
                 chunk.Blocks.SetBlock(x, y, z, new AlphaBlock((int)BlockType.WOOL,color));
             }else if(color == 16){
@@ -121,30 +169,32 @@ namespace EINA_TO_NBT
             }else if(color == 19){
                 AlphaBlock block = new AlphaBlock(63);
                 TileEntitySign tile = new TileEntitySign(block.GetTileEntity());
-                tile.Text1 = "Ada Byron";
+                tile.Text1 = text;
                 block.SetTileEntity(tile);
                 chunk.Blocks.SetBlock(x, y, z + 1, block);
 
 
                 block = new AlphaBlock(63,8);
                 tile = new TileEntitySign(block.GetTileEntity());
-                tile.Text1 = "Ada Byron";
+                tile.Text1 = text;
                 block.SetTileEntity(tile);
                 chunk.Blocks.SetBlock(x, y, z - 1, block);
 
 
                 block = new AlphaBlock(63,4);
                 tile = new TileEntitySign(block.GetTileEntity());
-                tile.Text1 = "Ada Byron";
+                tile.Text1 = text;
                 block.SetTileEntity(tile);
                 chunk.Blocks.SetBlock(x - 1, y, z, block);
 
                 block = new AlphaBlock(63,12);
                 tile = new TileEntitySign(block.GetTileEntity());
-                tile.Text1 = "Ada Byron";
+                tile.Text1 = text;
                 block.SetTileEntity(tile);
                 chunk.Blocks.SetBlock(x + 1, y, z, block);
 
+            }else if(color == 20){
+                chunk.Blocks.SetBlock(x, y, z, new AlphaBlock((int)BlockType.GLASS));
             }
 
         }
